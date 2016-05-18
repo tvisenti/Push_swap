@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:39:37 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/18 15:05:03 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/18 16:54:29 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_display(t_list *lst_a, t_list *lst_b);
 ** ft_lstadd.c
 */
 
-t_list	 *ft_lstnew(void);
+t_list	 *ft_lstnew(t_list *new);
 t_list	*lstadd(t_list *lst, int value);
 void	ft_check_double(t_list *lst, int value);
 

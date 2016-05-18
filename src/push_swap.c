@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:38:32 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/18 16:45:15 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/18 16:55:15 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	ft_display(t_list *lst_a, t_list *lst_b)
 {
 	int		i;
 	t_node	*tmp_a;
-	// t_node	*tmp_b;
+	t_node	*tmp_b;
 
 	i = 0;
 	tmp_a = lst_a->head;
-	// if (lst_b)
-	// 	tmp_b = lst_b->head;
+	if (lst_b)
+		tmp_b = lst_b->head;
 	printf("LST_A = \n");
 	while (tmp_a)
 	{
@@ -45,10 +45,9 @@ void	ft_error()
 	exit(1);
 }
 
-t_list	 *ft_lstnew(void)
+t_list	 *ft_lstnew(t_list *new)
 {
-	t_list *new;
-
+	new = NULL;
 	if (!(new = malloc(sizeof(new))))
     	ft_error();
     if (new != NULL)
@@ -68,9 +67,9 @@ int		main(int argc, char **argv)
 	int		i;
 
 	i = 1;
-	lst_a = ft_lstnew();
-	lst_b = ft_lstnew();
-	if (argc <= 1 && !lst_a && lst_b)
+	lst_a = ft_lstnew(lst_a);
+	lst_b = ft_lstnew(lst_b);
+	if (argc <= 1 && !lst_a && !lst_b)
 		ft_error();
 	while (argc-- > 1)
 	{
