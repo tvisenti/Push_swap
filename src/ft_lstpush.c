@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstpush.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 17:27:36 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/17 09:33:39 by tvisenti         ###   ########.fr       */
+/*   Created: 2016/05/18 13:33:16 by tvisenti          #+#    #+#             */
+/*   Updated: 2016/05/18 16:22:48 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int		ft_atoi(char *str)
+void	ft_push_a(t_list *lst_a, t_list *lst_b)
 {
-	long	sign;
-	long	nbr;
+	t_node	*elem;
 
-	sign = 1;
-	while (*str == ' ' || *str == '\f' || *str == '\n' || *str == '\r' ||
-			*str == '\t' || *str == '\v')
-		str++;
-	if (*str == '-' || *str == '+')
+	if (lst_a->head != NULL)
 	{
-		if (*str == '-')
-			sign = -1;
-		str++;
+		elem = lst_a->head;
+		if (lst_b->tail)
+		{
+			printf("val %d\n", elem->val);
+			lst_a->head = elem->next;
+			elem->next = NULL;
+			lst_b->head = elem;
+			lst_b->tail = elem;
+			printf("val %d\n", elem->val);
+		}
+		// else
+		// {
+		// 	new_head = lst_b->head;
+		// 	lst_b->head = elem;
+		// 	elem->next = new_head;
+		// }
 	}
-	nbr = 0;
-	while (ft_isdigit((int)*str))
-	{
-		nbr = nbr * 10 + *str - '0';
-		str++;
-	}
-	if (!(sign * nbr <= 2147483647 && sign * nbr >= -2147483648))
-		ft_error();
-	return (sign * nbr);
 }

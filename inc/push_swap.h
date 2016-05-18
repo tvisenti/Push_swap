@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:39:37 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/16 17:47:49 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/18 15:05:03 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,19 @@
 
 typedef struct		s_list
 {
-	int				val;
-	struct s_list	*prev;
-	struct s_list	*next;
+	size_t			length;
+	struct s_node	*tail;
+	struct s_node	*head;
 }					t_list;
+
+typedef struct		s_node
+{
+	int				val;
+	struct s_node	*next;
+	struct s_node	*prev;
+}					t_node;
+
+
 
 /*
 ** Lib
@@ -36,12 +45,33 @@ int		ft_isdigit(int c);
 int		ft_strlen(char *str);
 
 /*
-** Push_swap
+** push_swap.c
 */
 
 void	ft_error();
-void	lstadd(t_list *lst, int value);
-void	ft_check_double(t_list *lst, t_list elem);
-t_list	*lstnew(t_list *lst, int value);
+void	ft_display(t_list *lst_a, t_list *lst_b);
+
+/*
+** ft_lstadd.c
+*/
+
+t_list	 *ft_lstnew(void);
+t_list	*lstadd(t_list *lst, int value);
+void	ft_check_double(t_list *lst, int value);
+
+/*
+**	ft_lstswap.c
+*/
+
+void	ft_lstswap_a(t_list *lst_a);
+void	ft_lstswap_b(t_list *lst_b);
+void	ft_lstswap_ss(t_list *lst_a, t_list *lst_b);
+
+
+/*
+**	ft_push_a.c
+*/
+
+void	ft_push_a(t_list *lst_a, t_list *lst_b);
 
 #endif

@@ -6,23 +6,37 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:38:32 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/16 17:50:52 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/18 16:17:46 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_display(t_list *lst)
+void	ft_display(t_list *lst_a, t_list *lst_b)
 {
 	int		i;
+	t_node	*tmp_a;
+	// t_node	*tmp_b;
 
 	i = 0;
-	while (lst)
+	tmp_a = lst_a->head;
+	// if (lst_b)
+	// 	tmp_b = lst_b->head;
+	printf("LST_A = \n");
+	while (tmp_a)
 	{
-		printf("%d : %d\n", i, lst->val);
+		printf("%d : %d\n", i, tmp_a->val);
 		i++;
-		lst = lst->next;
+		tmp_a = tmp_a->next;
 	}
+	// printf("\nLST_B = \n");
+	// i = 0;
+	// while (tmp_b)
+	// {
+	// 	printf("%d : %d\n", i, tmp_b->val);
+	// 	i++;
+	// 	tmp_b = tmp_b->next;
+	// }
 }
 
 void	ft_error()
@@ -31,64 +45,60 @@ void	ft_error()
 	exit(1);
 }
 
-void	ft_check_double(t_list *lst, t_list elem)
+t_list	 *ft_lstnew(void)
 {
-	printf("1-");
-	while (lst)
-	{
-		printf("%d vs %d", lst->val, elem.val);
-		if (lst->val == elem.val)
-			ft_error();
-		lst = lst->next;
-	}
-	printf("2\n");
-}
+	t_list *new;
 
-t_list		*lstnew(t_list *lst, int value)
-{
-	if (!lst)
-	{
-		lst = malloc(sizeof(t_list));
-		lst->val = value;
-		lst->next = NULL;
-	}
-	return (lst);
-}
-
-void		lstadd(t_list *lst, int value)
-{
-	t_list *elem;
-	t_list *tmp;
-
-	if (!((elem = malloc(sizeof(t_list)))))
-		ft_error();
-	elem->val = value;
-	elem->next = NULL;
-	if (lst == NULL)
-		return ;
-	tmp = lst;
-	while (tmp->next != NULL)
-		tmp = tmp->next;
-	tmp->next = elem;
-	// ft_check_double(*lst, *elem);
+	if (!(new = malloc(sizeof(new))))
+    	ft_error();
+    if (new != NULL)
+    {
+        new->length = 0;
+        new->head = NULL;
+        new->tail = NULL;
+    }
+    return (new);
 }
 
 int		main(int argc, char **argv)
 {
-	int		nb;
-	t_list	*lst;
-	int		i = 1;
+	t_list	*lst_a;
+	t_list	*lst_b;
+	long	nb;
+	int		i;
 
-	lst = NULL;
-	if (argc <= 1)
+	i = 1;
+	lst_a = ft_lstnew();
+	lst_b = ft_lstnew();
+	if (argc <= 1 && !lst_a && lst_b)
 		ft_error();
 	while (argc-- > 1)
 	{
-		nb = ft_atoi(argv[i]);
-		lst = lstnew(lst, nb);
-		lstadd(lst, nb);
-		i++;
+		nb = ft_atoi(argv[i++]);
+		ft_check_double(lst_a, (int)nb);
+		lst_a = lstadd(lst_a, (int)nb);
 	}
-	ft_display(lst);
+	printf("========FIRST=============\n");
+	ft_display(lst_a, lst_b);
+
+	ft_lstswap_a(lst_a);
+	printf("==========SWAP A==============\n");
+	ft_display(lst_a, lst_b);
+
+
+	ft_push_a(lst_a, lst_b);
+	printf("===========PUSH A===========\n");
+	ft_display(lst_a, lst_b);
+
+	t_node	*tmp_b;
+	tmp_b = lst_b->head;
+	i = 0;
+	while (tmp_b)
+	{
+		printf("%d : %d\n", i, tmp_b->val);
+		i++;
+		tmp_b = tmp_b->next;
+	}
+
 	return (0);
 }
