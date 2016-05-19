@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 08:25:41 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 10:16:10 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/19 10:55:26 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_manage_display(t_list *lst_a, t_list *lst_b)
 	// ft_display_a(lst_a);
 	// ft_display_b(lst_b);
 
-	ft_rev_rotate_a(lst_a);
+	ft_rev_rotate_rrr(lst_a, lst_b);
 	printf("=========== 1x REV ROTATE A ===========\n");
 	ft_display_a(lst_a);
 	ft_display_b(lst_b);
@@ -60,6 +60,7 @@ void	ft_display_a(t_list *lst_a)
 	int		i;
 	t_node	*tmp_a;
 
+	i = 0;
 	tmp_a = lst_a->head;
 	printf("LST_A = \n");
 	while (tmp_a)
@@ -75,6 +76,7 @@ void	ft_display_b(t_list *lst_b)
 	int		i;
 	t_node	*tmp_b;
 
+	i = 0;
 	tmp_b = lst_b->head;
 	printf("LST_B = \n");
 	while (tmp_b)
