@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 08:25:41 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 10:55:26 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/19 11:18:55 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,44 @@ void	ft_manage_display(t_list *lst_a, t_list *lst_b)
 {
 	printf("======== FIRST DISPLAY=============\n");
 	ft_display_a(lst_a);
+	ft_display_b(lst_b);
 
-	// ft_swap_a(lst_a);
-	// printf("========== 1x SWAP A ==============\n");
-	// ft_display_a(lst_a);
 
-	ft_push_a(lst_a, lst_b);
-	ft_push_a(lst_a, lst_b);
-	ft_push_a(lst_a, lst_b);
-	printf("=========== 3x PUSH A ===========\n");
+	ft_swap_a(lst_a);
+	printf("========== 1x SWAP A ==============\n");
 	ft_display_a(lst_a);
 	ft_display_b(lst_b);
 
+
+	ft_push_b(lst_a, lst_b);
+	ft_push_b(lst_a, lst_b);
+	ft_push_b(lst_a, lst_b);
+	printf("=========== 3x PUSH B ===========\n");
+	ft_display_a(lst_a);
+	ft_display_b(lst_b);
+
+	// 
 	// ft_rotate_rr(lst_a, lst_b);
 	// printf("=========== 1x ROTATE RR ===========\n");
 	// ft_display_a(lst_a);
 	// ft_display_b(lst_b);
-	//
-	// ft_swap_ss(lst_a, lst_b);
-	// printf("=========== 1x SWAP SS ===========\n");
-	// ft_display_a(lst_a);
-	// ft_display_b(lst_b);
+
 
 	ft_rev_rotate_rrr(lst_a, lst_b);
-	printf("=========== 1x REV ROTATE A ===========\n");
+	printf("=========== 1x REV ROTATE RRR ===========\n");
 	ft_display_a(lst_a);
 	ft_display_b(lst_b);
 
-	ft_push_b(lst_a, lst_b);
+
+	ft_swap_a(lst_a);
+	printf("========== 1x SWAP A ==============\n");
+	ft_display_a(lst_a);
+	ft_display_b(lst_b);
+
+
+	ft_push_a(lst_a, lst_b);
+	ft_push_a(lst_a, lst_b);
+	ft_push_a(lst_a, lst_b);
 	printf("=========== 1x PUSH B ===========\n");
 	ft_display_a(lst_a);
 	ft_display_b(lst_b);
@@ -57,32 +67,28 @@ void	ft_error()
 
 void	ft_display_a(t_list *lst_a)
 {
-	int		i;
 	t_node	*tmp_a;
 
-	i = 0;
 	tmp_a = lst_a->head;
-	printf("LST_A = \n");
+	printf("a :");
 	while (tmp_a)
 	{
-		printf("%d : %d\n", i, tmp_a->val);
-		i++;
+		printf(" %d", tmp_a->val);
 		tmp_a = tmp_a->next;
 	}
+	printf("\n");
 }
 
 void	ft_display_b(t_list *lst_b)
 {
-	int		i;
 	t_node	*tmp_b;
 
-	i = 0;
 	tmp_b = lst_b->head;
-	printf("LST_B = \n");
+	printf("b :");
 	while (tmp_b)
 	{
-		printf("%d : %d\n", i, tmp_b->val);
-		i++;
+		printf(" %d", tmp_b->val);
 		tmp_b = tmp_b->next;
 	}
+	printf("\n");
 }
