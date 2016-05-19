@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 09:46:13 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 11:24:18 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/19 13:56:55 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	ft_rev_rotate_a(t_list *lst_a)
 		lst_a->head->prev = elem;
 		elem->next = lst_a->head;
 		lst_a->head = elem;
+		lst_a->head->prev = NULL;
+		printf("Le probleme n'est pas dans rev rotate a\n");
 	}
 }
 
@@ -36,9 +38,16 @@ void	ft_rev_rotate_b(t_list *lst_b)
 	if ((lst_b->tail != NULL || lst_b->tail->prev != NULL) &&
 	lst_b->head != lst_b->tail)
 	{
+
+		printf("pointeur1 : %p\n", lst_b->tail->prev);
 		elem = lst_b->tail;
+
+		printf("pointeur2 : %p\n", elem->next);
 		lst_b->tail = lst_b->tail->prev;
+
+		printf("pointeur3 : %p\n", lst_b->tail);
 		lst_b->tail->next = NULL;
+		// printf("ICI2\n");
 		elem->prev = NULL;
 		lst_b->head->prev = elem;
 		elem->next = lst_b->head;

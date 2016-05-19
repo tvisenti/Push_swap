@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:39:37 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 11:27:53 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/19 14:52:11 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct		s_node
 {
 	int				val;
 	struct s_node	*next;
-	struct s_node	*prev;
 }					t_node;
 
 typedef struct		s_list
