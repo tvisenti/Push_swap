@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_check_double.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/16 11:38:32 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 08:50:50 by tvisenti         ###   ########.fr       */
+/*   Created: 2016/05/19 08:28:41 by tvisenti          #+#    #+#             */
+/*   Updated: 2016/05/19 08:28:42 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int		main(int argc, char **argv)
+void	ft_check_double(t_list *lst, int value)
 {
-	t_list	*lst_a;
-	t_list	*lst_b;
-	long	nb;
-	int		i;
+	t_node *elem;
 
-	i = 1;
-	lst_a = ft_lstnew();
-	lst_b = ft_lstnew();
-	if (argc <= 1 && !lst_a && !lst_b)
-		ft_error();
-	while (argc-- > 1)
+	if (lst)
 	{
-		nb = ft_atoi(argv[i++]);
-		ft_check_double(lst_a, (int)nb);
-		lst_a = lstadd(lst_a, (int)nb);
+		elem = lst->head;
+		while (elem)
+		{
+			if (elem->val == value)
+				ft_error();
+			elem = elem->next;
+		}
 	}
-	ft_manage_display(lst_a, lst_b);
-	return (0);
 }

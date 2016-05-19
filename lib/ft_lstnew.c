@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/16 11:38:32 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 08:50:50 by tvisenti         ###   ########.fr       */
+/*   Created: 2016/05/19 08:26:50 by tvisenti          #+#    #+#             */
+/*   Updated: 2016/05/19 08:27:10 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int		main(int argc, char **argv)
+t_list	 *ft_lstnew(void)
 {
-	t_list	*lst_a;
-	t_list	*lst_b;
-	long	nb;
-	int		i;
+	t_list		*new;
 
-	i = 1;
-	lst_a = ft_lstnew();
-	lst_b = ft_lstnew();
-	if (argc <= 1 && !lst_a && !lst_b)
-		ft_error();
-	while (argc-- > 1)
+	if (!(new = (t_list*)malloc(sizeof(t_list))))
+		return (NULL);
+	if (new != NULL)
 	{
-		nb = ft_atoi(argv[i++]);
-		ft_check_double(lst_a, (int)nb);
-		lst_a = lstadd(lst_a, (int)nb);
+		new->length = 0;
+		new->head = NULL;
+		new->tail = NULL;
 	}
-	ft_manage_display(lst_a, lst_b);
-	return (0);
+	return (new);
 }

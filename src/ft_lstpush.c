@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 13:33:16 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/18 17:02:15 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/19 08:48:11 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,42 @@ void	ft_push_a(t_list *lst_a, t_list *lst_b)
 
 	if (lst_a->head != NULL)
 	{
-		printf("head : %p\n", lst_a->head);
-		printf("tail : %p\n", lst_a->tail);
 		elem = lst_a->head;
-		if (lst_b)
+		if (lst_b->head == NULL)
 		{
 			lst_a->head = elem->next;
-			printf("val : %d\n", elem->val);
 			elem->next = NULL;
 			lst_b->head = elem;
 			lst_b->tail = elem;
-			printf("val : %d\n", elem->val);
-			printf("head : %p\n", lst_b->head);
-			printf("tail : %p\n", lst_b->tail);
 		}
-		// {
-		// 	new_head = lst_b->head;
-		// 	lst_b->head = elem;
-		// 	elem->next = new_head;
-		// }
+		else
+		{
+			lst_a->head = elem->next;
+			elem->next = lst_b->head;
+			lst_b->head = elem;
+		}
+	}
+}
+
+void	ft_push_b(t_list *lst_a, t_list *lst_b)
+{
+	t_node	*elem;
+
+	if (lst_b->head != NULL)
+	{
+		elem = lst_b->head;
+		if (lst_a->head == NULL)
+		{
+			lst_b->head = elem->next;
+			elem->next = NULL;
+			lst_a->head = elem;
+			lst_a->tail = elem;
+		}
+		else
+		{
+			lst_b->head = elem->next;
+			elem->next = lst_a->head;
+			lst_a->head = elem;
+		}
 	}
 }

@@ -6,36 +6,19 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 09:53:09 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/18 16:52:46 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/19 08:35:47 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_check_double(t_list *lst, int value)
-{
-	t_node *elem;
-
-	if (lst)
-	{
-		elem = lst->head;
-		while (elem)
-		{
-			if (elem->val == value)
-				ft_error();
-			elem = elem->next;
-		}
-	}
-}
-
 t_list		*lstadd(t_list *lst, int value)
 {
-	t_node *new;
+	t_node	*new;
 
-	new = malloc(sizeof(t_node));
-	if (lst != NULL && new)
+	if (lst != NULL)
 	{
-		if (new != NULL)
+		if ((new = (t_node*)malloc(sizeof(t_node))) != NULL)
 		{
 			new->val = value;
 			new->next = NULL;
