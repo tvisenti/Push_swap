@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:39:37 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 08:51:32 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/19 09:47:18 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,9 @@ void	ft_display_b(t_list *lst_b);
 **	ft_lstswap.c
 */
 
-void	ft_lstswap_a(t_list *lst_a);
-void	ft_lstswap_b(t_list *lst_b);
-void	ft_lstswap_ss(t_list *lst_a, t_list *lst_b);
-
+void	ft_swap_a(t_list *lst_a);
+void	ft_swap_b(t_list *lst_b);
+void	ft_swap_ss(t_list *lst_a, t_list *lst_b);
 
 /*
 **	ft_push_a.c
@@ -69,5 +68,22 @@ void	ft_lstswap_ss(t_list *lst_a, t_list *lst_b);
 
 void	ft_push_a(t_list *lst_a, t_list *lst_b);
 void	ft_push_b(t_list *lst_a, t_list *lst_b);
+
+/*
+**	ft_rotate.c
+*/
+
+void	ft_rotate_a(t_list *lst_a);
+void	ft_rotate_b(t_list *lst_b);
+void	ft_rotate_rr(t_list *lst_a, t_list *lst_b);
+
+/*
+**	ft_reverse_rotate.c
+*/
+
+void	ft_rev_rotate_a(t_list *lst_a);
+void	ft_rev_rotate_b(t_list *lst_b);
+void	ft_rev_rotate_rr(t_list *lst_a, t_list *lst_b);
+
 
 #endif

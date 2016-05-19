@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstswap.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 11:23:23 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 09:05:36 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/19 09:14:45 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_lstswap_a(t_list *lst_a)
+void	ft_swap_a(t_list *lst_a)
 {
 	int		tmp;
 
@@ -24,7 +24,7 @@ void	ft_lstswap_a(t_list *lst_a)
 
 }
 
-void	ft_lstswap_b(t_list *lst_b)
+void	ft_swap_b(t_list *lst_b)
 {
 	int		tmp;
 
@@ -35,8 +35,8 @@ void	ft_lstswap_b(t_list *lst_b)
 	lst_b->head->next->val = tmp;
 }
 
-void	ft_lstswap_ss(t_list *lst_a, t_list *lst_b)
+void	ft_swap_ss(t_list *lst_a, t_list *lst_b)
 {
-	ft_lstswap_a(lst_a);
-	ft_lstswap_b(lst_b);
+	ft_swap_a(lst_a);
+	ft_swap_b(lst_b);
 }

@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 08:25:41 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 09:09:42 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/19 10:16:10 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,29 @@ void	ft_manage_display(t_list *lst_a, t_list *lst_b)
 	printf("======== FIRST DISPLAY=============\n");
 	ft_display_a(lst_a);
 
-	ft_lstswap_a(lst_a);
-	printf("========== 1x SWAP A ==============\n");
-	ft_display_a(lst_a);
+	// ft_swap_a(lst_a);
+	// printf("========== 1x SWAP A ==============\n");
+	// ft_display_a(lst_a);
 
 	ft_push_a(lst_a, lst_b);
 	ft_push_a(lst_a, lst_b);
-	printf("=========== 2x PUSH A ===========\n");
+	ft_push_a(lst_a, lst_b);
+	printf("=========== 3x PUSH A ===========\n");
 	ft_display_a(lst_a);
 	ft_display_b(lst_b);
 
-	ft_lstswap_ss(lst_a, lst_b);
-	printf("=========== 1x SWAP SS ===========\n");
+	// ft_rotate_rr(lst_a, lst_b);
+	// printf("=========== 1x ROTATE RR ===========\n");
+	// ft_display_a(lst_a);
+	// ft_display_b(lst_b);
+	//
+	// ft_swap_ss(lst_a, lst_b);
+	// printf("=========== 1x SWAP SS ===========\n");
+	// ft_display_a(lst_a);
+	// ft_display_b(lst_b);
+
+	ft_rev_rotate_a(lst_a);
+	printf("=========== 1x REV ROTATE A ===========\n");
 	ft_display_a(lst_a);
 	ft_display_b(lst_b);
 
@@ -53,7 +64,8 @@ void	ft_display_a(t_list *lst_a)
 	printf("LST_A = \n");
 	while (tmp_a)
 	{
-		printf("%d : %d\n", i++, tmp_a->val);
+		printf("%d : %d\n", i, tmp_a->val);
+		i++;
 		tmp_a = tmp_a->next;
 	}
 }
@@ -67,7 +79,8 @@ void	ft_display_b(t_list *lst_b)
 	printf("LST_B = \n");
 	while (tmp_b)
 	{
-		printf("%d : %d\n", i++, tmp_b->val);
+		printf("%d : %d\n", i, tmp_b->val);
+		i++;
 		tmp_b = tmp_b->next;
 	}
 }
