@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 08:25:41 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 11:25:25 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/19 11:25:54 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,10 @@ void	ft_manage_display(t_list *lst_a, t_list *lst_b)
 	ft_display_a(lst_a);
 	ft_display_b(lst_b);
 
-
-	// ft_rotate_rr(lst_a, lst_b);
-	// printf("=========== 1x ROTATE RR ===========\n");
-	// ft_display_a(lst_a);
-	// ft_display_b(lst_b);
+	printf("=========== 1x ROTATE RR ===========\n");
+	ft_rotate_rr(lst_a, lst_b);
+	ft_display_a(lst_a);
+	ft_display_b(lst_b);
 
 	printf("=========== 1x REV ROTATE RRR ===========\n");
 	ft_rev_rotate_rrr(lst_a, lst_b);
