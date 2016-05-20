@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:38:32 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/20 12:44:32 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/20 15:02:09 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		main(int argc, char **argv)
 		ft_check_double(lst_a, (int)nb);
 		lst_a = lstadd(lst_a, (int)nb);
 	}
-	ft_pivot(lst_a, lst_b);
+	ft_pivot(lst_a, lst_b, lst_a->tail, lst_a->head);
 	ft_manage_display(lst_a, lst_b);
 	return (0);
 }
