@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:39:37 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/20 08:41:07 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/20 09:28:02 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct		s_list
 */
 
 int					ft_atoi(char *str);
+int					ft_check_digit(char *str);
 int					ft_isdigit(int c);
 int					ft_strlen(char *str);
 t_list				*ft_lstnew(void);
