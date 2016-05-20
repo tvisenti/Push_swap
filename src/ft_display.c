@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 08:25:41 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/20 08:43:04 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/20 10:56:20 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,30 +56,30 @@ void	ft_display(t_list *lst_a, t_list *lst_b)
 	printf("\n");
 }
 
-void	ft_display_a(t_list *lst_a)
+void	ft_display_a(t_list *lst)
 {
-	t_node	*tmp_a;
+	t_node	*tmp;
 
-	tmp_a = lst_a->head;
+	tmp = lst->head;
 	printf("a :");
-	while (tmp_a)
+	while (tmp)
 	{
-		printf(" %d", tmp_a->val);
-		tmp_a = tmp_a->next;
+		printf(" %d", tmp->val);
+		tmp = tmp->next;
 	}
 	printf("\n");
 }
 
-void	ft_display_b(t_list *lst_b)
+void	ft_display_b(t_list *lst)
 {
-	t_node	*tmp_b;
+	t_node	*tmp;
 
-	tmp_b = lst_b->head;
+	tmp = lst->head;
 	printf("b :");
-	while (tmp_b)
+	while (tmp)
 	{
-		printf(" %d", tmp_b->val);
-		tmp_b = tmp_b->next;
+		printf(" %d", tmp->val);
+		tmp = tmp->next;
 	}
 	printf("\n");
 }

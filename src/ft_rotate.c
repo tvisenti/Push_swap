@@ -6,40 +6,40 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 09:11:23 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/20 08:45:16 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/20 10:57:32 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_rotate_a(t_list *lst_a)
+void	ft_rotate_a(t_list *lst)
 {
 	t_node	*elem;
 
-	if ((lst_a->head != NULL || lst_a->head->next != NULL) &&
-	lst_a->head != lst_a->tail)
+	if ((lst->head != NULL || lst->head->next != NULL) &&
+	lst->head != lst->tail)
 	{
-		elem = lst_a->head;
-		lst_a->head = lst_a->head->next;
+		elem = lst->head;
+		lst->head = lst->head->next;
 		elem->next = NULL;
-		lst_a->tail->next = elem;
-		lst_a->tail = elem;
+		lst->tail->next = elem;
+		lst->tail = elem;
 		write(1, "ra ", 3);
 	}
 }
 
-void	ft_rotate_b(t_list *lst_b)
+void	ft_rotate_b(t_list *lst)
 {
 	t_node	*elem;
 
-	if ((lst_b->head != NULL || lst_b->head->next != NULL) &&
-	lst_b->head != lst_b->tail)
+	if ((lst->head != NULL || lst->head->next != NULL) &&
+	lst->head != lst->tail)
 	{
-		elem = lst_b->head;
-		lst_b->head = lst_b->head->next;
+		elem = lst->head;
+		lst->head = lst->head->next;
 		elem->next = NULL;
-		lst_b->tail->next = elem;
-		lst_b->tail = elem;
+		lst->tail->next = elem;
+		lst->tail = elem;
 		write(1, "rb ", 3);
 	}
 }
