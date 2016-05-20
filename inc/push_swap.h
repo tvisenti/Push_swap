@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:39:37 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/20 10:58:33 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/20 12:22:57 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,11 @@ void				ft_rotate_rr(t_list *lst_a, t_list *lst_b);
 void				ft_rev_rotate_a(t_list *lst);
 void				ft_rev_rotate_b(t_list *lst);
 void				ft_rev_rotate_rrr(t_list *lst_a, t_list *lst_b);
+
+/*
+**	ft_quicksort.c
+*/
+
+void	ft_pivot(t_list *lst_a, t_list *lst_b);
 
 #endif
