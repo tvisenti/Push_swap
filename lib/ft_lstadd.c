@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 09:53:09 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 14:53:58 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/19 15:05:39 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,12 @@ t_list		*lstadd(t_list *lst, int value)
 			new->next = NULL;
 			if (lst->tail == NULL)
 			{
-				new->prev = NULL;
 				lst->head = new;
 				lst->tail = new;
 			}
 			else
 			{
 				lst->tail->next = new;
-				new->prev = lst->tail;
 				lst->tail = new;
 			}
 			lst->length++;

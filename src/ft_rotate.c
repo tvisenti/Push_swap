@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 09:11:23 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 11:07:31 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/20 08:45:16 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	ft_rotate_a(t_list *lst_a)
 		lst_a->head = lst_a->head->next;
 		elem->next = NULL;
 		lst_a->tail->next = elem;
-		elem->prev = lst_a->tail;
 		lst_a->tail = elem;
+		write(1, "ra ", 3);
 	}
 }
 
@@ -39,13 +39,29 @@ void	ft_rotate_b(t_list *lst_b)
 		lst_b->head = lst_b->head->next;
 		elem->next = NULL;
 		lst_b->tail->next = elem;
-		elem->prev = lst_b->tail;
 		lst_b->tail = elem;
+		write(1, "rb ", 3);
 	}
 }
 
 void	ft_rotate_rr(t_list *lst_a, t_list *lst_b)
 {
-	ft_rotate_a(lst_a);
-	ft_rotate_b(lst_b);
+	t_node	*elem;
+
+	if (((lst_b->head != NULL || lst_b->head->next != NULL) &&
+		lst_b->head != lst_b->tail) || ((lst_a->head != NULL ||
+		lst_a->head->next != NULL) && lst_a->head != lst_a->tail))
+	{
+		elem = lst_a->head;
+		lst_a->head = lst_a->head->next;
+		elem->next = NULL;
+		lst_a->tail->next = elem;
+		lst_a->tail = elem;
+		elem = lst_b->head;
+		lst_b->head = lst_b->head->next;
+		elem->next = NULL;
+		lst_b->tail->next = elem;
+		lst_b->tail = elem;
+		write(1, "rr ", 3);
+	}
 }

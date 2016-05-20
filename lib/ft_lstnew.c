@@ -6,15 +6,15 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 08:26:50 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 08:27:10 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/20 08:41:49 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-t_list	 *ft_lstnew(void)
+t_list		*ft_lstnew(void)
 {
-	t_list		*new;
+	t_list	*new;
 
 	if (!(new = (t_list*)malloc(sizeof(t_list))))
 		return (NULL);

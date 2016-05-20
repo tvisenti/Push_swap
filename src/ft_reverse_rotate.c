@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 09:46:13 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 13:56:55 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/20 08:44:02 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,15 @@ void	ft_rev_rotate_a(t_list *lst_a)
 {
 	t_node	*elem;
 
-	if ((lst_a->tail != NULL || lst_a->tail->prev != NULL) &&
-	lst_a->head != lst_a->tail)
+	if (lst_a->tail != NULL && lst_a->head != lst_a->tail)
 	{
-		elem = lst_a->tail;
-		lst_a->tail = lst_a->tail->prev;
-		lst_a->tail->next = NULL;
-		elem->prev = NULL;
-		lst_a->head->prev = elem;
-		elem->next = lst_a->head;
-		lst_a->head = elem;
-		lst_a->head->prev = NULL;
-		printf("Le probleme n'est pas dans rev rotate a\n");
+		elem = lst_a->head;
+		while (elem->next != lst_a->tail)
+			elem = elem->next;
+		elem->next->next = lst_a->head;
+		lst_a->head = elem->next;
+		elem->next = NULL;
+		write(1, "rra ", 4);
 	}
 }
 
@@ -35,28 +32,37 @@ void	ft_rev_rotate_b(t_list *lst_b)
 {
 	t_node	*elem;
 
-	if ((lst_b->tail != NULL || lst_b->tail->prev != NULL) &&
-	lst_b->head != lst_b->tail)
+	if (lst_b->tail != NULL && lst_b->head != lst_b->tail)
 	{
-
-		printf("pointeur1 : %p\n", lst_b->tail->prev);
-		elem = lst_b->tail;
-
-		printf("pointeur2 : %p\n", elem->next);
-		lst_b->tail = lst_b->tail->prev;
-
-		printf("pointeur3 : %p\n", lst_b->tail);
-		lst_b->tail->next = NULL;
-		// printf("ICI2\n");
-		elem->prev = NULL;
-		lst_b->head->prev = elem;
-		elem->next = lst_b->head;
-		lst_b->head = elem;
+		elem = lst_b->head;
+		while (elem->next != lst_b->tail)
+			elem = elem->next;
+		elem->next->next = lst_b->head;
+		lst_b->head = elem->next;
+		elem->next = NULL;
+		write(1, "rrb ", 4);
 	}
 }
 
 void	ft_rev_rotate_rrr(t_list *lst_a, t_list *lst_b)
 {
-	ft_rev_rotate_a(lst_a);
-	ft_rev_rotate_b(lst_b);
+	t_node	*elem;
+
+	if ((lst_a->tail != NULL && lst_a->head != lst_a->tail) ||
+	(lst_b->tail != NULL && lst_b->head != lst_b->tail))
+	{
+		elem = lst_a->head;
+		while (elem->next != lst_a->tail)
+			elem = elem->next;
+		elem->next->next = lst_a->head;
+		lst_a->head = elem->next;
+		elem->next = NULL;
+		elem = lst_b->head;
+		while (elem->next != lst_b->tail)
+			elem = elem->next;
+		elem->next->next = lst_b->head;
+		lst_b->head = elem->next;
+		elem->next = NULL;
+		write(1, "rrr ", 4);
+	}
 }
