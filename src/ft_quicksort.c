@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/20 12:09:40 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/21 17:35:34 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/21 18:04:50 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,36 +33,30 @@ int		ft_which_rotate(t_list *lst_a, t_node *cur, t_node *max)
 }
 
 
-void	ft_main_quicksort(t_list *lst_a, t_list *lst_b, t_node *pivot, t_node *cur)
+void	ft_main_quicksort(t_list *a, t_list *b, t_node *pivot, t_node *cur)
 {
 	t_node	*max;
-	int		i;
 
-	i = 0;
-	max = ft_max_val(lst_a, lst_a->head);
+	max = ft_max_val(a, a->head);
 	while (cur != NULL)
 	{
-		while (max != lst_a->head)
+		while (max != a->head)
 		{
-			if (ft_which_rotate(lst_a, lst_a->head, max) == 1)
-				ft_rotate_a(lst_a);
+			if (ft_which_rotate(a, a->head, max) == 1)
+				ft_rotate_a(a);
 			else
-				ft_rev_rotate_a(lst_a);
-			i++;
+				ft_rev_rotate_a(a);
 		}
-		ft_push_b(lst_a, lst_b);
-		i++;
-		max = ft_max_val(lst_a, lst_a->head);
-		cur = lst_a->head;
+		ft_push_b(a, b);
+		max = ft_max_val(a, a->head);
+		cur = a->head;
 	}
-	cur = lst_b->head;
+	cur = b->head;
 	while (cur != NULL)
 	{
 		cur = cur->next;
-		ft_push_a(lst_a, lst_b);
-		i++;
+		ft_push_a(a, b);
 	}
-	printf("\nNombre de coups : %d\n", i);
 }
 
 t_node	*ft_max_val(t_list *lst_a, t_node *cur)
@@ -72,7 +66,7 @@ t_node	*ft_max_val(t_list *lst_a, t_node *cur)
 	max = cur;
 	while (cur != NULL)
 	{
-		if (max->val > cur->val)
+		if (cur->val < max->val)
 			max = cur;
 		cur = cur->next;
 	}

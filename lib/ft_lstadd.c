@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 09:53:09 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 15:05:39 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/21 17:53:53 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ t_list		*lstadd(t_list *lst, int value)
 				lst->tail->next = new;
 				lst->tail = new;
 			}
-			lst->length++;
 		}
 	}
 	return (lst);

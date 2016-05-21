@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:38:32 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/21 10:53:54 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/21 18:04:38 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		main(int argc, char **argv)
 	lst_b = ft_lstnew();
 	if (argc <= 1 && !lst_a && !lst_b)
 		ft_error();
+	printf("\nNombre de nombres : %d\n\n", argc - 1);
 	while (argc-- > 1)
 	{
 		nb = ft_atoi(argv[i++]);
@@ -32,5 +33,6 @@ int		main(int argc, char **argv)
 	}
 	ft_main_quicksort(lst_a, lst_b, lst_a->tail, lst_a->head);
 	ft_manage_display(lst_a, lst_b);
+	printf("Nombre de coups : %lu\n\n", lst_a->length + lst_b->length);
 	return (0);
 }

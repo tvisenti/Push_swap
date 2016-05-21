@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 11:23:23 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/20 10:58:04 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/21 17:56:46 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_swap_a(t_list *lst)
 	lst->head->val = lst->head->next->val;
 	lst->head->next->val = tmp;
 	write(1, "sa ", 3);
+	lst->length++;
 }
 
 void	ft_swap_b(t_list *lst)
@@ -34,6 +35,7 @@ void	ft_swap_b(t_list *lst)
 	lst->head->val = lst->head->next->val;
 	lst->head->next->val = tmp;
 	write(1, "sb ", 3);
+	lst->length++;
 }
 
 void	ft_swap_ss(t_list *lst_a, t_list *lst_b)
@@ -51,4 +53,5 @@ void	ft_swap_ss(t_list *lst_a, t_list *lst_b)
 	lst_b->head->val = lst_b->head->next->val;
 	lst_b->head->next->val = tmp_b;
 	write(1, "ss ", 3);
+	lst_a->length++;
 }
