@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 09:46:13 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/20 10:57:07 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/21 14:01:43 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,12 @@
 void	ft_rev_rotate_a(t_list *lst)
 {
 	t_node	*elem;
+	t_node	*tmp;
 
-	if (lst->tail != NULL && lst->head != lst->tail)
+	// printf("lst->head : %d\n", lst->head->val);
+	// printf("lst->tail : %d\n", lst->tail->val);
+
+	if (lst->head != NULL && lst->head != lst->tail)
 	{
 		elem = lst->head;
 		while (elem->next != lst->tail)
@@ -24,6 +28,7 @@ void	ft_rev_rotate_a(t_list *lst)
 		elem->next->next = lst->head;
 		lst->head = elem->next;
 		elem->next = NULL;
+		lst->tail = elem;
 		write(1, "rra ", 4);
 	}
 }
@@ -40,6 +45,7 @@ void	ft_rev_rotate_b(t_list *lst)
 		elem->next->next = lst->head;
 		lst->head = elem->next;
 		elem->next = NULL;
+		lst->tail = elem;
 		write(1, "rrb ", 4);
 	}
 }
