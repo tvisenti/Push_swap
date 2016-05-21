@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/20 12:09:40 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/21 18:04:50 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/21 18:17:59 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,17 @@ int		ft_which_rotate(t_list *lst_a, t_node *cur, t_node *max)
 	return (1);
 }
 
+// void	ft_check_list(t_list *lst_a)
+// {
+//
+// }
 
 void	ft_main_quicksort(t_list *a, t_list *b, t_node *pivot, t_node *cur)
 {
 	t_node	*max;
 
 	max = ft_max_val(a, a->head);
+	// ft_check_list(a);
 	while (cur != NULL)
 	{
 		while (max != a->head)
