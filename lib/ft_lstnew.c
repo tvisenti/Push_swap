@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 08:26:50 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/20 08:41:49 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 11:50:28 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_list		*ft_lstnew(void)
 		return (NULL);
 	if (new != NULL)
 	{
+		new->argc = 0;
 		new->length = 0;
 		new->head = NULL;
 		new->tail = NULL;

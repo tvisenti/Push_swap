@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:39:37 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/21 17:54:22 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 11:51:08 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct		s_node
 
 typedef struct		s_list
 {
+	size_t			argc;
 	size_t			length;
 	struct s_node	*head;
 	struct s_node	*tail;
@@ -93,8 +94,16 @@ void				ft_rev_rotate_rrr(t_list *lst_a, t_list *lst_b);
 */
 
 void	ft_main_quicksort(t_list *a, t_list *b, t_node *pivot, t_node *cur);
-t_node	*ft_max_val(t_list *lst_a, t_node *cur);
+t_node	*ft_min_val(t_list *lst_a, t_node *cur);
 int		ft_which_rotate(t_list *lst_a, t_node *cur, t_node *max);
 
+/*
+** ft_check_list.c
+*/
+
+int		ft_check_list_first(t_list *lst_a, t_node *first, t_node *second);
+int		ft_check_list_croi(t_list *lst_a, t_node *first, t_node *second);
+int		ft_check_list_decroi(t_list *lst_a, t_node *first, t_node *second);
+int		ft_check_final(t_list *lst_a, t_list *lst_b);
 
 #endif

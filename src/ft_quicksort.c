@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/20 12:09:40 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/21 18:17:59 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 11:12:30 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,50 +32,47 @@ int		ft_which_rotate(t_list *lst_a, t_node *cur, t_node *max)
 	return (1);
 }
 
-// void	ft_check_list(t_list *lst_a)
-// {
-//
-// }
-
 void	ft_main_quicksort(t_list *a, t_list *b, t_node *pivot, t_node *cur)
 {
-	t_node	*max;
+	t_node	*min;
 
-	max = ft_max_val(a, a->head);
-	// ft_check_list(a);
+	if (ft_check_list_first(a, a->head, a->head->next) == 1)
+		return ;
 	while (cur != NULL)
 	{
-		while (max != a->head)
+		min = ft_min_val(a, a->head);
+		while (min != a->head)
 		{
-			if (ft_which_rotate(a, a->head, max) == 1)
+			if (ft_which_rotate(a, a->head, min) == 1)
 				ft_rotate_a(a);
 			else
 				ft_rev_rotate_a(a);
 		}
+		if (ft_check_final(a, b) == 1)
+			return ;
 		ft_push_b(a, b);
-		max = ft_max_val(a, a->head);
 		cur = a->head;
 	}
 	cur = b->head;
-	while (cur != NULL)
+	while (cur != NULL && cur == cur->next)
 	{
-		cur = cur->next;
+	// 	cur = cur->next;
 		ft_push_a(a, b);
 	}
 }
 
-t_node	*ft_max_val(t_list *lst_a, t_node *cur)
+t_node	*ft_min_val(t_list *lst_a, t_node *cur)
 {
-	t_node	*max;
+	t_node	*min;
 
-	max = cur;
+	min = cur;
 	while (cur != NULL)
 	{
-		if (cur->val < max->val)
-			max = cur;
+		if (cur->val < min->val)
+			min = cur;
 		cur = cur->next;
 	}
-	return (max);
+	return (min);
 }
 
 void	ft_sort_a(t_list *lst_a, t_list * lst_b, t_node *pivot, t_node *cur)
@@ -111,51 +108,3 @@ void	ft_sort_b(t_list *lst_a, t_list * lst_b, t_node *pivot, t_node *cur)
 		}
 	}
 }
-
-// while (cur_a->next != NULL)
-// {
-// 	printf("piv->a : %d\n", pivot_a->val);
-// 	printf("cur->a : %d\n", cur_a->val);
-// 	ft_sort_a(lst_a, lst_b, lst_a->head, lst_a->head->next);
-// 	break;
-// 	if (cur_b == NULL)
-// 	{
-// 		cur_b = lst_b->head;
-// 		pivot_b = lst_b->tail;
-// 	}
-// 	else
-// 	{
-// 		cur_b = cur_b->next;
-// 		pivot_b = lst_b->tail;
-// 	}
-// 	ft_sort_b(lst_a, lst_b, pivot_b, cur_b);
-// 	cur_a = lst_a->head->next;
-// 	pivot_a = lst_a->tail;
-// }
-
-// void	ft_pivot(t_list *lst_a, t_list *lst_b, t_node *pivot, t_node *cur)
-// {
-// 	while (cur->next != NULL)
-// 	{
-// 		if (pivot->val < cur->val)
-// 			cur = cur->next;
-// 		else if (pivot->val > cur->val && cur == lst_a->head)
-// 		{
-// 			cur = cur->next;
-// 			ft_push_b(lst_a, lst_b);
-// 		}
-// 		else if (pivot->val < lst_a->head->val &&
-// 			pivot->val > lst_a->head->next->val)
-// 		{
-// 			cur = lst_a->head;
-// 			ft_swap_a(lst_a);
-// 		}
-// 		else
-// 		{
-// 			cur = lst_a->head->next;
-// 			ft_rotate_a(lst_a);
-// 		}
-// 	}
-// 	// ft_quicksort(lst_a, lst_a->tail, lst_a->head);
-// 	// ft_quicksort(lst_b, lst_b->tail, lst_b->head);
-// }
