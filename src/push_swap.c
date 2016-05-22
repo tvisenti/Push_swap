@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:38:32 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/21 18:04:38 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 11:56:53 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		main(int argc, char **argv)
 		lst_a = lstadd(lst_a, (int)nb);
 	}
 	ft_main_quicksort(lst_a, lst_b, lst_a->tail, lst_a->head);
-	ft_manage_display(lst_a, lst_b);
+	ft_display(lst_a, lst_b);
 	printf("Nombre de coups : %lu\n\n", lst_a->length + lst_b->length);
 	return (0);
 }

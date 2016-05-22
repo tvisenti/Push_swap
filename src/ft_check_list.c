@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/22 11:09:24 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 11:54:07 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 11:58:11 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int		ft_check_list_first(t_list *lst_a, t_node *first, t_node *second)
 			if (ft_check_list_croi(lst_a, lst_a->head, lst_a->head->next) == 1)
 				return (1);
 		}
-		if (second == lst_a->tail && first->val > second->val && lst_a->argc > 3)
+		if (second == lst_a->tail && first->val > second->val &&
+			lst_a->argc > 3)
 		{
 			ft_rev_rotate_a(lst_a);
 			ft_rev_rotate_a(lst_a);

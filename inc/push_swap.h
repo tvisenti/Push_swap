@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:39:37 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 11:51:08 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 11:57:30 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void				ft_check_double(t_list *lst, int value);
 **		ft_display.c
 */
 
-void				ft_manage_display(t_list *lst_a, t_list *lst_b);
 void				ft_error(void);
 void				ft_display(t_list *lst_a, t_list *lst_b);
 void				ft_display_a(t_list *lst);
@@ -93,17 +92,21 @@ void				ft_rev_rotate_rrr(t_list *lst_a, t_list *lst_b);
 **	ft_quicksort.c
 */
 
-void	ft_main_quicksort(t_list *a, t_list *b, t_node *pivot, t_node *cur);
-t_node	*ft_min_val(t_list *lst_a, t_node *cur);
-int		ft_which_rotate(t_list *lst_a, t_node *cur, t_node *max);
+void				ft_main_quicksort(t_list *a, t_list *b, t_node *pivot,
+	t_node *cur);
+t_node				*ft_min_val(t_list *lst_a, t_node *cur);
+int					ft_which_rotate(t_list *lst_a, t_node *cur, t_node *max);
 
 /*
 ** ft_check_list.c
 */
 
-int		ft_check_list_first(t_list *lst_a, t_node *first, t_node *second);
-int		ft_check_list_croi(t_list *lst_a, t_node *first, t_node *second);
-int		ft_check_list_decroi(t_list *lst_a, t_node *first, t_node *second);
-int		ft_check_final(t_list *lst_a, t_list *lst_b);
+int					ft_check_list_first(t_list *lst_a, t_node *first,
+	t_node *second);
+int					ft_check_list_croi(t_list *lst_a, t_node *first,
+	t_node *second);
+int					ft_check_list_decroi(t_list *lst_a, t_node *first,
+	t_node *second);
+int					ft_check_final(t_list *lst_a, t_list *lst_b);
 
 #endif
