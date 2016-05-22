@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_quicksort.c                                     :+:      :+:    :+:   */
+/*   ft_algo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/20 12:09:40 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 16:35:19 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 17:38:33 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_node	*ft_min_val(t_node *cur)
 	return (min);
 }
 
-void	ft_main_quicksort(t_list *a, t_list *b, t_node *cur)
+void	ft_main_algo(t_list *a, t_list *b, t_node *cur)
 {
 	t_node	*min;
 

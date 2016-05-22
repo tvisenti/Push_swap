@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:39:37 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 17:02:15 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 17:42:20 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int					ft_atoi(char *str);
 int					ft_check_digit(char *str);
 int					ft_isdigit(int c);
 int					ft_strlen(char *str);
-char				*ft_strcpy(char *dst, char *src);
+char				*ft_strcat(char *s1, char *s2);
 t_list				*ft_lstnew(void);
 t_list				*lstadd(t_list *lst, int value);
 void				ft_check_double(t_list *lst, int value);
@@ -65,9 +65,9 @@ void				ft_error(void);
 void				ft_bufset(void);
 void				ft_display(t_list *lst_a, t_list *lst_b);
 void				ft_buf(char *str, t_list *lst_a, t_list *lst_b);
-void				ft_display_a(t_list *lst);
-void				ft_display_b(t_list *lst);
-void				ft_les_bonus(t_list *lst_a, t_list *lst_b);
+void				ft_display_a_b(t_list *lst_a, t_list *lst_b);
+void				ft_print_list(t_list *lst_a, t_list *lst_b);
+
 /*
 **	ft_swap.c
 */
@@ -100,10 +100,10 @@ void				ft_rev_rotate_b(t_list *lst_b, t_list *lst_a);
 void				ft_rev_rotate_rrr(t_list *lst_a, t_list *lst_b);
 
 /*
-**	ft_quicksort.c
+**	ft_algo.c
 */
 
-void				ft_main_quicksort(t_list *a, t_list *b, t_node *cur);
+void				ft_main_algo(t_list *a, t_list *b, t_node *cur);
 t_node				*ft_min_val(t_node *cur);
 int					ft_which_rotate(t_node *cur, t_node *max);
 
@@ -117,5 +117,7 @@ int					ft_check_tail(t_list *lst_a, t_list *lst_b);
 int					ft_check_list_croi(t_node *back, t_node *front);
 int					ft_check_list_decroi(t_node *back, t_node *front);
 int					ft_check_final(t_list *lst_a, t_list *lst_b);
+
+void				ft_les_bonus(t_list *lst_a, t_list *lst_b);
 
 #endif
