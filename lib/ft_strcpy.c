@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/19 08:26:50 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 17:02:29 by tvisenti         ###   ########.fr       */
+/*   Created: 2016/05/22 15:11:31 by tvisenti          #+#    #+#             */
+/*   Updated: 2016/05/22 15:11:50 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-t_list		*ft_lstnew(void)
+char	*ft_strcpy(char *dst, char *src)
 {
-	t_list	*new;
+	int i;
 
-	if (!(new = (t_list*)malloc(sizeof(t_list))))
-		return (NULL);
-	if (new != NULL)
+	i = 0;
+	while (src[i] != '\0')
 	{
-		new->argc = 0;
-		new->coup = 0;
-		new->head = NULL;
-		new->tail = NULL;
+		dst[i] = src[i];
+		i++;
 	}
-	return (new);
+	dst[i] = '\0';
+	return (dst);
 }

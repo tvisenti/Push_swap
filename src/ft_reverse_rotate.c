@@ -6,45 +6,45 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 09:46:13 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/21 17:56:58 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 17:02:45 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_rev_rotate_a(t_list *lst)
+void	ft_rev_rotate_a(t_list *lst_a, t_list *lst_b)
 {
 	t_node	*elem;
 
-	if (lst->head != NULL && lst->head != lst->tail)
+	if (lst_a->head != NULL && lst_a->head != lst_a->tail)
 	{
-		elem = lst->head;
-		while (elem->next != lst->tail)
+		elem = lst_a->head;
+		while (elem->next != lst_a->tail)
 			elem = elem->next;
-		elem->next->next = lst->head;
-		lst->head = elem->next;
+		elem->next->next = lst_a->head;
+		lst_a->head = elem->next;
 		elem->next = NULL;
-		lst->tail = elem;
-		write(1, "rra ", 4);
-		lst->length++;
+		lst_a->tail = elem;
+		ft_buf("rra ", lst_a, lst_b);
+		lst_a->coup++;
 	}
 }
 
-void	ft_rev_rotate_b(t_list *lst)
+void	ft_rev_rotate_b(t_list *lst_b, t_list *lst_a)
 {
 	t_node	*elem;
 
-	if (lst->head != NULL && lst->head != lst->tail)
+	if (lst_b->head != NULL && lst_b->head != lst_b->tail)
 	{
-		elem = lst->head;
-		while (elem->next != lst->tail)
+		elem = lst_b->head;
+		while (elem->next != lst_b->tail)
 			elem = elem->next;
-		elem->next->next = lst->head;
-		lst->head = elem->next;
+		elem->next->next = lst_b->head;
+		lst_b->head = elem->next;
 		elem->next = NULL;
-		lst->tail = elem;
-		write(1, "rrb ", 4);
-		lst->length++;
+		lst_b->tail = elem;
+		ft_buf("rrb ", lst_a, lst_b);
+		lst_b->coup++;
 	}
 }
 
@@ -69,7 +69,7 @@ void	ft_rev_rotate_rrr(t_list *lst_a, t_list *lst_b)
 		lst_b->head = elem->next;
 		elem->next = NULL;
 		lst_b->tail = elem;
-		write(1, "rrr ", 4);
-		lst_a->length++;
+		ft_buf("rrr ", lst_a, lst_b);
+		lst_a->coup++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 08:25:41 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 11:56:41 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 17:13:40 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,39 @@ void	ft_error(void)
 	exit(1);
 }
 
-void	ft_display(t_list *lst_a, t_list *lst_b)
+void				ft_bufset(void)
 {
-	printf("\n\t");
-	ft_display_a(lst_a);
-	printf("\t");
-	ft_display_b(lst_b);
-	printf("\n");
+	int				n;
+
+	n = 0;
+	while (n < 4096)
+	{
+		g_buf[n] = '\0';
+		n++;
+	}
+	g_i = 0;
+}
+
+void				ft_display(t_list *lst_a, t_list *lst_b)
+{
+	write(1, g_buf, g_i);
+	if (g_bonus == 1)
+	{
+		ft_putchar('\n');
+		ft_display_a(lst_a);
+		ft_display_b(lst_b);
+	}
+	ft_bufset();
+}
+
+void				ft_buf(char *str, t_list *lst_a, t_list *lst_b)
+{
+	ft_strcpy(g_buf, str);
+	if (ft_strlen(str) == 4)
+		g_i++;
+	g_i = g_i + 3;
+	if (g_i <= 4092)
+		ft_display(lst_a, lst_b);
 }
 
 void	ft_display_a(t_list *lst)
@@ -32,13 +58,14 @@ void	ft_display_a(t_list *lst)
 	t_node	*tmp;
 
 	tmp = lst->head;
-	printf("a :");
+	ft_putstr("\ta : ");
 	while (tmp)
 	{
-		printf(" %d", tmp->val);
+		ft_putnbr(tmp->val);
+		ft_putchar(' ');
 		tmp = tmp->next;
 	}
-	printf("\n");
+	write(1, "\n", 2);
 }
 
 void	ft_display_b(t_list *lst)
@@ -46,11 +73,14 @@ void	ft_display_b(t_list *lst)
 	t_node	*tmp;
 
 	tmp = lst->head;
-	printf("b :");
+	ft_putstr("\tb : ");
+	if (!tmp)
+		write(1, "\\", 1);
 	while (tmp)
 	{
-		printf(" %d", tmp->val);
+		ft_putnbr(tmp->val);
+		ft_putchar(' ');
 		tmp = tmp->next;
 	}
-	printf("\n");
+	write(1, "\n\n", 2);
 }

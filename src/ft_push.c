@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 13:33:16 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 11:53:01 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 17:02:37 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,8 @@ void	ft_push_a(t_list *lst_a, t_list *lst_b)
 			elem->next = lst_a->head;
 			lst_a->head = elem;
 		}
-		lst_a->length++;
-		lst_b->length--;
-		write(1, "pa ", 3);
-		lst_a->length++;
+		ft_buf("pa ", lst_a, lst_b);
+		lst_a->coup++;
 		lst_a->argc++;
 	}
 }
@@ -60,10 +58,8 @@ void	ft_push_b(t_list *lst_a, t_list *lst_b)
 			elem->next = lst_b->head;
 			lst_b->head = elem;
 		}
-		lst_a->length--;
-		lst_b->length++;
-		write(1, "pb ", 3);
-		lst_a->length++;
+		ft_buf("pb ", lst_a, lst_b);
+		lst_a->coup++;
 		lst_a->argc--;
 	}
 }

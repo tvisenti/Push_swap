@@ -6,36 +6,36 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 11:23:23 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/21 17:56:46 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 17:03:18 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_swap_a(t_list *lst)
+void	ft_swap_a(t_list *lst_a, t_list *lst_b)
 {
 	int		tmp;
 
-	if (lst->head == NULL || lst->head->next == NULL)
+	if (lst_a->head == NULL || lst_a->head->next == NULL)
 		return ;
-	tmp = lst->head->val;
-	lst->head->val = lst->head->next->val;
-	lst->head->next->val = tmp;
-	write(1, "sa ", 3);
-	lst->length++;
+	tmp = lst_a->head->val;
+	lst_a->head->val = lst_a->head->next->val;
+	lst_a->head->next->val = tmp;
+	ft_buf("sa ", lst_a, lst_b);
+	lst_a->coup++;
 }
 
-void	ft_swap_b(t_list *lst)
+void	ft_swap_b(t_list *lst_b, t_list *lst_a)
 {
 	int		tmp;
 
-	if (lst->head == NULL || lst->head->next == NULL)
+	if (lst_b->head == NULL || lst_b->head->next == NULL)
 		return ;
-	tmp = lst->head->val;
-	lst->head->val = lst->head->next->val;
-	lst->head->next->val = tmp;
-	write(1, "sb ", 3);
-	lst->length++;
+	tmp = lst_b->head->val;
+	lst_b->head->val = lst_b->head->next->val;
+	lst_b->head->next->val = tmp;
+	ft_buf("sb ", lst_a, lst_b);
+	lst_b->coup++;
 }
 
 void	ft_swap_ss(t_list *lst_a, t_list *lst_b)
@@ -52,6 +52,6 @@ void	ft_swap_ss(t_list *lst_a, t_list *lst_b)
 	tmp_b = lst_b->head->val;
 	lst_b->head->val = lst_b->head->next->val;
 	lst_b->head->next->val = tmp_b;
-	write(1, "ss ", 3);
-	lst_a->length++;
+	ft_buf("ss ", lst_a, lst_b);
+	lst_a->coup++;
 }
