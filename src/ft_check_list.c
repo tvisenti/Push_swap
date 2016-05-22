@@ -6,61 +6,67 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/22 11:09:24 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 11:58:11 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 12:24:50 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int		ft_check_list_first(t_list *lst_a, t_node *first, t_node *second)
+int		ft_check_tail(t_list *lst_a)
 {
-	while (second != NULL)
+	ft_rev_rotate_a(lst_a);
+	if (ft_check_list_croi(lst_a, lst_a->head, lst_a->head->next) == 1)
+		return (1);
+	ft_rev_rotate_a(lst_a);
+	ft_swap_a(lst_a);
+	ft_rotate_a(lst_a);
+	ft_rotate_a(lst_a);
+	if (ft_check_list_croi(lst_a, lst_a->head, lst_a->head->next) == 1)
+		return (1);
+	return (0);
+}
+
+int		ft_check_list_first(t_list *lst_a, t_node *back, t_node *front)
+{
+	while (front != NULL)
 	{
-		if (second == lst_a->head->next && first->val > second->val)
+		if (front == lst_a->head->next && back->val > front->val)
 		{
 			ft_swap_a(lst_a);
 			if (ft_check_list_croi(lst_a, lst_a->head, lst_a->head->next) == 1)
 				return (1);
 		}
-		if (second == lst_a->tail && first->val > second->val &&
-			lst_a->argc > 3)
-		{
-			ft_rev_rotate_a(lst_a);
-			ft_rev_rotate_a(lst_a);
-			ft_swap_a(lst_a);
-			ft_rotate_a(lst_a);
-			ft_rotate_a(lst_a);
-			if (ft_check_list_croi(lst_a, lst_a->head, lst_a->head->next) == 1)
-				return (1);
-		}
-		if (first->val > second->val)
+		if (front == lst_a->tail && back->val > front->val &&
+			lst_a->argc > 3 && ft_check_tail(lst_a) == 1)
+			return (1);
+		if (back->val > front->val)
 			return (0);
-		first = first->next;
-		second = second->next;
+		back = back->next;
+		front = front->next;
 	}
 	return (1);
 }
 
-int		ft_check_list_croi(t_list *lst_a, t_node *first, t_node *second)
+int		ft_check_list_croi(t_list *lst_a, t_node *back, t_node *front)
 {
-	while (second != NULL)
+	while (front != NULL)
 	{
-		if (first->val > second->val)
+		if (back->val > front->val)
 			return (0);
-		first = first->next;
-		second = second->next;
+		back = back->next;
+		front = front->next;
 	}
 	return (1);
 }
 
-int		ft_check_list_decroi(t_list *lst_a, t_node *first, t_node *second)
+int		ft_check_list_decroi(t_list *lst_a, t_node *back, t_node *front)
 {
-	while (second != NULL)
+	while (front != NULL)
 	{
-		if (first->val < second->val)
+		if (back->val < front->val)
 			return (0);
-		first = first->next;
-		second = second->next;
+		back = back->next;
+		front = front->next;
 	}
 	return (1);
 }

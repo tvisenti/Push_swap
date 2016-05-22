@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:39:37 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 11:57:30 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 12:21:39 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,12 +101,13 @@ int					ft_which_rotate(t_list *lst_a, t_node *cur, t_node *max);
 ** ft_check_list.c
 */
 
-int					ft_check_list_first(t_list *lst_a, t_node *first,
-	t_node *second);
-int					ft_check_list_croi(t_list *lst_a, t_node *first,
-	t_node *second);
-int					ft_check_list_decroi(t_list *lst_a, t_node *first,
-	t_node *second);
+int					ft_check_list_first(t_list *lst_a, t_node *back,
+	t_node *front);
+int					ft_check_tail(t_list *lst_a);
+int					ft_check_list_croi(t_list *lst_a, t_node *back,
+	t_node *front);
+int					ft_check_list_decroi(t_list *lst_a, t_node *back,
+	t_node *front);
 int					ft_check_final(t_list *lst_a, t_list *lst_b);
 
 #endif
