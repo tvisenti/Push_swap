@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:38:32 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 11:56:53 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/22 12:49:40 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		main(int argc, char **argv)
 	i = 1;
 	lst_a = ft_lstnew();
 	lst_b = ft_lstnew();
-	if (argc <= 1 && !lst_a && !lst_b)
+	if (argc <= 1 || !lst_a || !lst_b)
 		ft_error();
 	printf("\nNombre de nombres : %d\n\n", argc - 1);
 	while (argc-- > 1)
