@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 08:25:41 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 17:42:01 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/23 09:42:25 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void		ft_display_a_b(t_list *lst_a, t_list *lst_b)
 	write(1, "\n", 1);
 }
 
-void		ft_display(t_list *lst_a, t_list *lst_b)
+void	ft_display(t_list *lst_a, t_list *lst_b)
 {
 	write(1, g_buf, g_i - 1);
 	if (g_bonus == 1)
@@ -67,6 +67,7 @@ void		ft_display(t_list *lst_a, t_list *lst_b)
 		ft_display_a_b(lst_a, lst_b);
 	}
 	ft_bufset();
+	ft_putchar('\n');
 }
 
 void		ft_buf(char *str, t_list *lst_a, t_list *lst_b)

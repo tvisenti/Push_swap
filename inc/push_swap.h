@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:39:37 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 17:42:20 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/23 10:27:47 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,9 @@ void				ft_putnbr(int n);
 
 void				ft_error(void);
 void				ft_bufset(void);
-void				ft_display(t_list *lst_a, t_list *lst_b);
 void				ft_buf(char *str, t_list *lst_a, t_list *lst_b);
+void				ft_display(t_list *lst_a, t_list *lst_b);
 void				ft_display_a_b(t_list *lst_a, t_list *lst_b);
-void				ft_print_list(t_list *lst_a, t_list *lst_b);
 
 /*
 **	ft_swap.c

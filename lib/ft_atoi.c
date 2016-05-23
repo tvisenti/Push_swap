@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 17:27:36 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 17:30:10 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/23 10:27:26 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ int		ft_bonus(char *str, char c)
 		{
 			g_bonus = 1;
 			str++;
-			if (*str == 'c')
-				g_bonus = 2;
 			return (1);
 		}
 	}
