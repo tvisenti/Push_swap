@@ -6,43 +6,28 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:38:32 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/23 10:28:11 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/24 09:43:20 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-#include <string.h>
-
-void	ft_les_bonus(t_list *lst_a, t_list *lst_b)
+void	ft_free(t_list *lst_a, t_list *lst_b)
 {
-	t_node	*cur;
+	t_node *tmp;
+	t_node *elem;
 
-	cur = lst_a->head;
-	if (g_bonus == 1)
+	tmp = lst_a->head;
+	elem = lst_a->head->next;
+	while (elem)
 	{
-		ft_putstr("Nombre de nombres : ");
-		ft_putnbr(g_argc);
-		ft_putstr("\nNombre de coups : ");
-		ft_putnbr(lst_a->coup + lst_b->coup);
-		ft_putstr("\n");
+		free(tmp);
+		tmp = elem;
+		elem = elem->next;
 	}
-	while (cur != NULL)
-	{
-		cur = cur->next;
-		free(cur);
-	}
-	free(lst_a);
+	free(tmp);
 	free(lst_b);
 }
-
-// int		ft_check_bonus(char *str, int i)
-// {
-// 	g_bonus = 0;
-// 	g_argc = 0;
-// 	// printf("str : %s\n", str);
-// 	return (i);
-// }
 
 int		main(int argc, char **argv)
 {
@@ -53,15 +38,12 @@ int		main(int argc, char **argv)
 
 	i = 1;
 	ft_bufset();
-	g_bonus = 0;
-	g_argc = 0;
-	// if (strcmp(argv[i], " -b "))
-	// 	i = ft_check_bonus(argv[1], i);
 	lst_a = ft_lstnew();
 	lst_b = ft_lstnew();
-	if (argc <= 1 || !lst_a || !lst_b)
+	if (argc < 1 || !lst_a || !lst_b)
 		ft_error();
-	g_argc = argc - 2;
+	if (argc == 1)
+		return (0);
 	while (argc-- > 1)
 	{
 		nb = ft_atoi(argv[i++]);
@@ -71,6 +53,6 @@ int		main(int argc, char **argv)
 	ft_main_algo(lst_a, lst_b, lst_a->head);
 	if (g_i > 0)
 		ft_display(lst_a, lst_b);
-	ft_les_bonus(lst_a, lst_b);
+	ft_free(lst_a, lst_b);
 	return (0);
 }

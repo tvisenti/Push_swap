@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 13:33:16 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 17:02:37 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/24 09:29:25 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ void	ft_push_a(t_list *lst_a, t_list *lst_b)
 			lst_a->head = elem;
 		}
 		ft_buf("pa ", lst_a, lst_b);
-		lst_a->coup++;
-		lst_a->argc++;
 	}
 }
 
@@ -59,7 +57,5 @@ void	ft_push_b(t_list *lst_a, t_list *lst_b)
 			lst_b->head = elem;
 		}
 		ft_buf("pb ", lst_a, lst_b);
-		lst_a->coup++;
-		lst_a->argc--;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 08:25:41 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/23 09:42:25 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/24 09:43:35 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,43 +31,12 @@ void		ft_bufset(void)
 	g_i = 0;
 }
 
-void		ft_display_a_b(t_list *lst_a, t_list *lst_b)
-{
-	t_node	*tmp;
-
-	tmp = lst_a->head;
-	write(1, "\n", 1);
-	ft_putstr("\ta : ");
-	while (tmp)
-	{
-		ft_putnbr(tmp->val);
-		ft_putchar(' ');
-		tmp = tmp->next;
-	}
-	write(1, "\n", 1);
-	tmp = lst_b->head;
-	ft_putstr("\tb : ");
-	if (!tmp)
-		write(1, "\\", 1);
-	while (tmp)
-	{
-		ft_putnbr(tmp->val);
-		ft_putchar(' ');
-		tmp = tmp->next;
-	}
-	write(1, "\n", 1);
-}
-
-void	ft_display(t_list *lst_a, t_list *lst_b)
+void		ft_display(t_list *lst_a, t_list *lst_b)
 {
 	write(1, g_buf, g_i - 1);
-	if (g_bonus == 1)
-	{
+	if (g_i < 4092)
 		ft_putchar('\n');
-		ft_display_a_b(lst_a, lst_b);
-	}
 	ft_bufset();
-	ft_putchar('\n');
 }
 
 void		ft_buf(char *str, t_list *lst_a, t_list *lst_b)

@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 11:23:23 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 17:03:18 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/24 09:29:20 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	ft_swap_a(t_list *lst_a, t_list *lst_b)
 	lst_a->head->val = lst_a->head->next->val;
 	lst_a->head->next->val = tmp;
 	ft_buf("sa ", lst_a, lst_b);
-	lst_a->coup++;
 }
 
 void	ft_swap_b(t_list *lst_b, t_list *lst_a)
@@ -35,7 +34,6 @@ void	ft_swap_b(t_list *lst_b, t_list *lst_a)
 	lst_b->head->val = lst_b->head->next->val;
 	lst_b->head->next->val = tmp;
 	ft_buf("sb ", lst_a, lst_b);
-	lst_b->coup++;
 }
 
 void	ft_swap_ss(t_list *lst_a, t_list *lst_b)
@@ -53,5 +51,4 @@ void	ft_swap_ss(t_list *lst_a, t_list *lst_b)
 	lst_b->head->val = lst_b->head->next->val;
 	lst_b->head->next->val = tmp_b;
 	ft_buf("ss ", lst_a, lst_b);
-	lst_a->coup++;
 }

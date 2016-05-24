@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 09:46:13 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 17:02:45 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/24 09:29:24 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_rev_rotate_a(t_list *lst_a, t_list *lst_b)
 		elem->next = NULL;
 		lst_a->tail = elem;
 		ft_buf("rra ", lst_a, lst_b);
-		lst_a->coup++;
 	}
 }
 
@@ -44,7 +43,6 @@ void	ft_rev_rotate_b(t_list *lst_b, t_list *lst_a)
 		elem->next = NULL;
 		lst_b->tail = elem;
 		ft_buf("rrb ", lst_a, lst_b);
-		lst_b->coup++;
 	}
 }
 
@@ -70,6 +68,5 @@ void	ft_rev_rotate_rrr(t_list *lst_a, t_list *lst_b)
 		elem->next = NULL;
 		lst_b->tail = elem;
 		ft_buf("rrr ", lst_a, lst_b);
-		lst_a->coup++;
 	}
 }

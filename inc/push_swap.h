@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:39:37 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/23 10:27:47 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/24 09:42:07 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-/*
-**	A EFFACER
-*/
-
-# include <stdio.h>
-
 char				g_buf[4096];
 int					g_i;
-int					g_bonus;
-int					g_argc;
 
 typedef struct		s_node
 {
@@ -56,6 +48,7 @@ void				ft_check_double(t_list *lst, int value);
 void				ft_putchar(char c);
 void				ft_putstr(char *str);
 void				ft_putnbr(int n);
+void				ft_free(t_list *lst_a, t_list *lst_b);
 
 /*
 **		ft_display.c
@@ -116,7 +109,5 @@ int					ft_check_tail(t_list *lst_a, t_list *lst_b);
 int					ft_check_list_croi(t_node *back, t_node *front);
 int					ft_check_list_decroi(t_node *back, t_node *front);
 int					ft_check_final(t_list *lst_a, t_list *lst_b);
-
-void				ft_les_bonus(t_list *lst_a, t_list *lst_b);
 
 #endif

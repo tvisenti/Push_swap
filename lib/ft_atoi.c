@@ -6,7 +6,7 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 17:27:36 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/23 10:27:26 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/24 09:29:19 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,29 +25,12 @@ int		ft_check_digit(char *str)
 	return (0);
 }
 
-int		ft_bonus(char *str, char c)
-{
-	if (c == '-')
-	{
-		str++;
-		if (*str == 'b')
-		{
-			g_bonus = 1;
-			str++;
-			return (1);
-		}
-	}
-	return (0);
-}
-
 int		ft_atoi(char *str)
 {
 	long	sign;
 	long	nbr;
 
 	sign = 1;
-	if (ft_bonus(str, *str) == 1)
-		str = str + 2;
 	while (*str == ' ' || *str == '\f' || *str == '\n' || *str == '\r' ||
 			*str == '\t' || *str == '\v')
 		str++;
