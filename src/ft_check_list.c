@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_list.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Transmetropolitan <Transmetropolitan@student.42.fr>+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/22 11:09:24 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 16:33:45 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/28 12:33:29 by Transmetropolitan###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,13 @@ int		ft_check_tail(t_list *lst_a, t_list *lst_b)
 int		ft_check_list_first(t_list *lst_a, t_node *back, t_node *front,
 	t_list *lst_b)
 {
+	if (lst_a->argc > 3 && lst_a->head->val < lst_a->head->next->val &&
+		lst_a->head->val < lst_a->tail->val &&
+		lst_a->head->next->val > lst_a->tail->val)
+		{
+			if (ft_check_list_croi(lst_a->head, lst_a->head->next) == 0)
+				return (0);
+		}
 	while (front != NULL)
 	{
 		if (front == lst_a->head->next && back->val > front->val)
@@ -45,7 +52,9 @@ int		ft_check_list_first(t_list *lst_a, t_node *back, t_node *front,
 		back = back->next;
 		front = front->next;
 	}
-	return (1);
+	if (ft_check_list_croi(lst_a->head, lst_a->tail) == 0)
+		return (1);
+	return (0);
 }
 
 int		ft_check_list_croi(t_node *back, t_node *front)

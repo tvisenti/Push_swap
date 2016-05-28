@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Transmetropolitan <Transmetropolitan@student.42.fr>+#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:38:32 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/24 09:43:20 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/05/28 12:34:13 by Transmetropolitan###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+#include <stdio.h>
 
 void	ft_free(t_list *lst_a, t_list *lst_b)
 {
@@ -27,6 +28,19 @@ void	ft_free(t_list *lst_a, t_list *lst_b)
 	}
 	free(tmp);
 	free(lst_b);
+}
+
+void		affichage(t_list *lst)
+{
+	t_node *elem;
+
+	elem = lst->head;
+	while (elem->next != NULL)
+	{
+		printf("%d, ", elem->val);
+		elem = elem->next;
+	}
+	printf("%d\n", elem->val);
 }
 
 int		main(int argc, char **argv)
@@ -53,6 +67,7 @@ int		main(int argc, char **argv)
 	ft_main_algo(lst_a, lst_b, lst_a->head);
 	if (g_i > 0)
 		ft_display(lst_a, lst_b);
+	// affichage(lst_a);
 	ft_free(lst_a, lst_b);
 	return (0);
 }
