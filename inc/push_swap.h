@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Transmetropolitan <Transmetropolitan@student.42.fr>+#+  +:+       +#+        */
+/*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/16 11:39:37 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/28 12:27:51 by Transmetropolitan###   ########.fr       */
+/*   Updated: 2016/06/07 12:00:04 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void				ft_error(void);
 void				ft_bufset(void);
 void				ft_buf(char *str, t_list *lst_a, t_list *lst_b);
 void				ft_display(t_list *lst_a, t_list *lst_b);
-void				ft_display_a_b(t_list *lst_a, t_list *lst_b);
 
 /*
 **	ft_swap.c
