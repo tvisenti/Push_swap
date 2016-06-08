@@ -6,13 +6,13 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 09:46:13 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/24 09:29:24 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/06/07 12:12:46 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_rev_rotate_a(t_list *lst_a, t_list *lst_b)
+void	ps_ft_rev_rotate_a(t_list *lst_a, t_list *lst_b)
 {
 	t_node	*elem;
 
@@ -25,11 +25,11 @@ void	ft_rev_rotate_a(t_list *lst_a, t_list *lst_b)
 		lst_a->head = elem->next;
 		elem->next = NULL;
 		lst_a->tail = elem;
-		ft_buf("rra ", lst_a, lst_b);
+		ps_ft_buf("rra ", lst_a, lst_b);
 	}
 }
 
-void	ft_rev_rotate_b(t_list *lst_b, t_list *lst_a)
+void	ps_ft_rev_rotate_b(t_list *lst_b, t_list *lst_a)
 {
 	t_node	*elem;
 
@@ -42,11 +42,11 @@ void	ft_rev_rotate_b(t_list *lst_b, t_list *lst_a)
 		lst_b->head = elem->next;
 		elem->next = NULL;
 		lst_b->tail = elem;
-		ft_buf("rrb ", lst_a, lst_b);
+		ps_ft_buf("rrb ", lst_a, lst_b);
 	}
 }
 
-void	ft_rev_rotate_rrr(t_list *lst_a, t_list *lst_b)
+void	ps_ft_rev_rotate_rrr(t_list *lst_a, t_list *lst_b)
 {
 	t_node	*elem;
 
@@ -67,6 +67,6 @@ void	ft_rev_rotate_rrr(t_list *lst_a, t_list *lst_b)
 		lst_b->head = elem->next;
 		elem->next = NULL;
 		lst_b->tail = elem;
-		ft_buf("rrr ", lst_a, lst_b);
+		ps_ft_buf("rrr ", lst_a, lst_b);
 	}
 }

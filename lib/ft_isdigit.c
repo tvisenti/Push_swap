@@ -6,11 +6,11 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 17:05:25 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/16 12:02:21 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/06/07 12:17:03 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isdigit(int c)
+int		ps_ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);

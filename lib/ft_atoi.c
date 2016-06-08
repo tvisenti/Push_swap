@@ -6,26 +6,26 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 17:27:36 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/06/07 12:00:53 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/06/07 12:18:34 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int		ft_check_digit(char *str)
+static int	ps_ft_check_digit(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i] == ' ' || str[i] == '\t' || (str[i] >= '0' && str[i] <= '9'))
 		i++;
-	if (i == ft_strlen(str))
+	if (i == ps_ft_strlen(str))
 		return (1);
-	ft_error();
+	ps_ft_error();
 	return (0);
 }
 
-int		ft_atoi(char *str)
+int		ps_ft_atoi(char *str)
 {
 	long	sign;
 	long	nbr;
@@ -41,13 +41,13 @@ int		ft_atoi(char *str)
 		str++;
 	}
 	nbr = 0;
-	while (ft_isdigit((int)*str))
+	while (ps_ft_isdigit((int)*str))
 	{
 		nbr = nbr * 10 + *str - '0';
 		str++;
 	}
 	if (!(sign * nbr <= 2147483647 && sign * nbr >= -2147483648) ||
-		ft_check_digit(str) != 1)
-		ft_error();
+		ps_ft_check_digit(str) != 1)
+		ps_ft_error();
 	return (sign * nbr);
 }

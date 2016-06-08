@@ -6,13 +6,13 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 08:26:50 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/22 17:02:29 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/06/07 12:10:08 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-t_list		*ft_lstnew(void)
+t_list		*ps_ft_lstnew(void)
 {
 	t_list	*new;
 

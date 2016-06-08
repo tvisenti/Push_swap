@@ -6,13 +6,13 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 11:23:23 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/24 09:29:20 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/06/07 12:13:48 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_swap_a(t_list *lst_a, t_list *lst_b)
+void	ps_ft_swap_a(t_list *lst_a, t_list *lst_b)
 {
 	int		tmp;
 
@@ -21,10 +21,10 @@ void	ft_swap_a(t_list *lst_a, t_list *lst_b)
 	tmp = lst_a->head->val;
 	lst_a->head->val = lst_a->head->next->val;
 	lst_a->head->next->val = tmp;
-	ft_buf("sa ", lst_a, lst_b);
+	ps_ft_buf("sa ", lst_a, lst_b);
 }
 
-void	ft_swap_b(t_list *lst_b, t_list *lst_a)
+void	ps_ft_swap_b(t_list *lst_b, t_list *lst_a)
 {
 	int		tmp;
 
@@ -33,10 +33,10 @@ void	ft_swap_b(t_list *lst_b, t_list *lst_a)
 	tmp = lst_b->head->val;
 	lst_b->head->val = lst_b->head->next->val;
 	lst_b->head->next->val = tmp;
-	ft_buf("sb ", lst_a, lst_b);
+	ps_ft_buf("sb ", lst_a, lst_b);
 }
 
-void	ft_swap_ss(t_list *lst_a, t_list *lst_b)
+void	ps_ft_swap_ss(t_list *lst_a, t_list *lst_b)
 {
 	int		tmp_a;
 	int		tmp_b;
@@ -50,5 +50,5 @@ void	ft_swap_ss(t_list *lst_a, t_list *lst_b)
 	tmp_b = lst_b->head->val;
 	lst_b->head->val = lst_b->head->next->val;
 	lst_b->head->next->val = tmp_b;
-	ft_buf("ss ", lst_a, lst_b);
+	ps_ft_buf("ss ", lst_a, lst_b);
 }

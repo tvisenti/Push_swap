@@ -6,13 +6,13 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 08:28:41 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/19 08:28:42 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/06/07 12:17:06 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_check_double(t_list *lst, int value)
+void	ps_ft_check_double(t_list *lst, int value)
 {
 	t_node *elem;
 
@@ -22,7 +22,7 @@ void	ft_check_double(t_list *lst, int value)
 		while (elem)
 		{
 			if (elem->val == value)
-				ft_error();
+				ps_ft_error();
 			elem = elem->next;
 		}
 	}

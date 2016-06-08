@@ -6,13 +6,13 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/18 13:33:16 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/05/24 09:29:25 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/06/07 12:12:16 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_push_a(t_list *lst_a, t_list *lst_b)
+void	ps_ft_push_a(t_list *lst_a, t_list *lst_b)
 {
 	t_node	*elem;
 
@@ -32,11 +32,11 @@ void	ft_push_a(t_list *lst_a, t_list *lst_b)
 			elem->next = lst_a->head;
 			lst_a->head = elem;
 		}
-		ft_buf("pa ", lst_a, lst_b);
+		ps_ft_buf("pa ", lst_a, lst_b);
 	}
 }
 
-void	ft_push_b(t_list *lst_a, t_list *lst_b)
+void	ps_ft_push_b(t_list *lst_a, t_list *lst_b)
 {
 	t_node	*elem;
 
@@ -56,6 +56,6 @@ void	ft_push_b(t_list *lst_a, t_list *lst_b)
 			elem->next = lst_b->head;
 			lst_b->head = elem;
 		}
-		ft_buf("pb ", lst_a, lst_b);
+		ps_ft_buf("pb ", lst_a, lst_b);
 	}
 }

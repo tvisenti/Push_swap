@@ -6,13 +6,13 @@
 /*   By: tvisenti <tvisenti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/20 12:09:40 by tvisenti          #+#    #+#             */
-/*   Updated: 2016/06/07 12:01:17 by tvisenti         ###   ########.fr       */
+/*   Updated: 2016/06/07 12:10:46 by tvisenti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int		ft_which_rotate(t_node *cur, t_node *max)
+int		ps_ft_which_rotate(t_node *cur, t_node *max)
 {
 	int		len;
 	int		find;
@@ -31,7 +31,7 @@ int		ft_which_rotate(t_node *cur, t_node *max)
 	return (1);
 }
 
-t_node	*ft_min_val(t_node *cur)
+t_node	*ps_ft_min_val(t_node *cur)
 {
 	t_node	*min;
 
@@ -45,31 +45,31 @@ t_node	*ft_min_val(t_node *cur)
 	return (min);
 }
 
-void	ft_main_algo(t_list *a, t_list *b, t_node *cur)
+void	ps_ft_main_algo(t_list *a, t_list *b, t_node *cur)
 {
 	t_node	*min;
 
-	if (ft_check_list_first(a, a->head, a->head->next, b) == 1)
+	if (ps_ft_check_list_first(a, a->head, a->head->next, b) == 1)
 		return ;
 	while (cur != NULL)
 	{
-		min = ft_min_val(a->head);
+		min = ps_ft_min_val(a->head);
 		while (min != a->head)
 		{
-			if (ft_which_rotate(a->head, min) == 1)
-				ft_rotate_a(a, b);
+			if (ps_ft_which_rotate(a->head, min) == 1)
+				ps_ft_rotate_a(a, b);
 			else
-				ft_rev_rotate_a(a, b);
+				ps_ft_rev_rotate_a(a, b);
 		}
-		if (ft_check_final(a, b) == 1)
+		if (ps_ft_check_final(a, b) == 1)
 			return ;
-		ft_push_b(a, b);
+		ps_ft_push_b(a, b);
 		cur = a->head;
 	}
 	cur = b->head;
 	while (cur != NULL)
 	{
 		cur = cur->next;
-		ft_push_a(a, b);
+		ps_ft_push_a(a, b);
 	}
 }
