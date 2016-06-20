@@ -9,8 +9,7 @@ manipuler les piles.
 
 #### Votre but ? 
 
-Ecrire un programme nommé push_swap qui trie par ordre croissant et affiche sur la sortie
-standard les nombres passés en paramètre.
+Ecrire un programme nommé push_swap qui trie par ordre croissant et affiche sur la sortie standard les nombres passés en paramètre.
 
 Fonction autorisées :
 ◦ write
