@@ -1,5 +1,4 @@
-# Push_swap
-Push_Swap  - 42 - Project 05
+# Push_Swap  - 42 - Project 05
 
 (Nouveau sujet, non représentatif du code)
 
