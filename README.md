@@ -1,5 +1,5 @@
 # Push_swap
-Push_Swap  - 42 - Project 06
+Push_Swap  - 42 - Project 05
 
 Mise à jour du sujet
 
