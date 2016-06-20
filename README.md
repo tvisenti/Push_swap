@@ -13,6 +13,7 @@ Ecrire un programme nommé push_swap qui trie par ordre croissant et affiche sur
 les nombres passés en paramètre.
 
 #### Fonction autorisées :
+
 ◦ write
 ◦ read
 ◦ malloc
